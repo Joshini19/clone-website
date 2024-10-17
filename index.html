@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img style="height: 80px; width: 170px;" src="amazon-logo-1024x683.png">
+
+        <!-- Search Bar -->
+        <div>
+        <input type="text" id="search-bar" placeholder="Search products..." onkeyup="searchProducts()">
+        <img style="height: 30px; width: 30px;" src="download.png">
+        </div>
+         
+        
+        <!-- Sign In Link -->
+        <div>
+            <a href="#" id="sign-in-link" onclick="toggleSignIn()">Sign In</a> 
+            | 
+            <a href="cart.html">View Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <!-- Menu Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#"> New Arrivals</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#"> Men's Clothing</a></li>
+            <li><a href="#"> Women's Clothing</a></li>
+            <li><a href="#"> Kid's Clothing</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Toys</a></li>
+            <li><a href="#"> Accessories</a></li>
+            <li><a href="#"> Mobiles</a></li>
+            <li><a href="#"> Home Appliances</a></li>
+        </ul>
+    </nav>
+
+    <!-- Offer Banner -->
+    <div id="offer-banner">
+        <p>Special Offer: 50% off on selected items! Hurry, while stocks last!</p>
+    </div>
+
+    <!-- Sign In Form (Hidden Initially) -->
+    <div id="sign-in-form" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleSignIn()">&times;</span>
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                
+                <button type="button" onclick="signIn()">Sign In</button>
+                <button type="button" onclick="signIn()">Buy now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="product" data-name="Korean top">
+            <img src="https://m.media-amazon.com/images/I/51TOFXdVZcL._AC_UL480_FMwebp_QL65_.jpg" alt="Product 1">
+            <h5>PINKHUB Elegant Women's Tie Neck <br>Summer Long Sleeve V-Neck Chiffon Korean <br> Style Plain Business Work Shirts Blouse Top</h5>
+            <p>₹499.00</p>
+            <button onclick="addToCart(0, 'Korean top', 499.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Korean top">
+            <img src="https://m.media-amazon.com/images/I/71DXDGkLD9L._AC_UL480_FMwebp_QL65_.jpg" alt="Product 2">
+            <h5>Zilcon Women's Waffle (Cotton) Button Down<br> Neck Korean Tops for Women || Oversized it<br> Shirts for Women || Long Sleeve Tops</h5>
+            <p>₹399.00</p>
+            <button onclick="addToCart(1, 'Korean top', 399.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Korean top">
+            <img src="https://m.media-amazon.com/images/I/71JctOWjk5L._AC_UL480_FMwebp_QL65_.jpg" alt="Product 2">
+            <h5>Look & Took Textile Women Dori Belt Dress <br> Korean Three Fourth Sleeve Single Breasted <br>Knee Length Georgette Dresses Streetwear<br> Dress</h5>
+            <p>₹395.00</p>
+            <button onclick="addToCart(2, 'Korean top', 395.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Korean top">
+            <img src="https://m.media-amazon.com/images/I/71dAA5ZxOOL._AC_UL480_QL65_.jpg" alt="Product 2">
+            <h5>Jashudi style Womens tops | Pattern :Solid <br>
+                Fit type :Regular Fit <br>
+                Sleeve type :Long Sleeve</h5>
+            <p>₹485.00</p>
+            <button onclick="addToCart(3, 'Korean top', 485.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+        <div class="product" data-name="Women pant">
+            <img src="https://m.media-amazon.com/images/I/61NntVVMq-L._SY741_.jpg" alt="Product 2">
+            <h5>Aahwan Women & <br> Girls' Solid Oversized Wide<br> Leg Baggy Korean Pants Trousers</h5>
+            <p>₹985.00</p>
+            <button onclick="addToCart(4, 'Women pant', 985.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+        <div class="product" data-name="Trousers">
+            <img src="https://m.media-amazon.com/images/I/51Clvs6gtYL._SY741_.jpg" alt="Product 2">
+            <h5>KOTTY Women<br> Polyester Blend<br> Solid Trousers</h5>
+            <p>₹265.00</p>
+            <button onclick="addToCart(5, 'Trousers', 265.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+        <div class="product" data-name="Trousers">
+            <img src="https://m.media-amazon.com/images/I/61MScKCdYKL._SY550_.jpg" alt="Product 2">
+            <h5>KOTTY Women<br> High Rise Viscose Rayon <br><br>Relaxed Fit Korean Trousers</h5>
+            <p>₹280.00</p>
+            <button onclick="addToCart(6, 'Trousers', 280.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Trousers">
+            <img src="https://m.media-amazon.com/images/I/61hWp4v+kfL._SY550_.jpg" alt="Product 2">
+            <h5>KATECLO Women's Wide Leg Pants | Beige<br> Polyester Trousers | Stylish<br> Korean Clothing | Flared, Straight <br>Fit, Baggy, and Loose Jeggings for<br> Girls and Women</h5>
+            <p>₹810.00</p>
+            <button onclick="addToCart(7, 'Men s wear', 810.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Men's wear">
+            <img src="https://m.media-amazon.com/images/I/61x8lR9hB+L._SX522_.jpg" alt="Product 2">
+            <h5>Noble Monk Men's <br> Regular Fit Shirt</h5>
+            <p>₹300.00</p>
+            <button onclick="addToCart(8, 'Men s wear',300.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Men's wear">
+            <img src="https://m.media-amazon.com/images/I/618VAp9YisL._SY550_.jpg" alt="Product 2">
+            <h5>Lymio Men Regular Fit Pants <br>Material type: Polyester <br>
+                Length :Ankle Length</h5>
+            <p>₹395.00</p>
+            <button onclick="addToCart(9, 'Men s wear', 395.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Men's wear">
+            <img src="https://m.media-amazon.com/images/I/51RAa8c8eEL._SY741_.jpg" alt="Product 2">
+            <h5>Jack & Jones men's <br>Ray Bootcut High<br> Rise Jeans</h5>
+            <p>₹1,749.00</p>
+            <button onclick="addToCart(10 , 'Men s wear', 1,749.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+        <div class="product" data-name="Men's wear">
+            <img src="https://m.media-amazon.com/images/I/71W+kOgr4aL._AC_UL480_FMwebp_QL65_.jpg" alt="Product 2">
+            <h5>Leriya Fashion Men Casual<br> Full Sleeve Regular <br> Fit T-Shirt</h5>
+            <p>₹400.00</p>
+            <button onclick="addToCart(11, 'Men s wear', 0.00)">Add to Cart</button>
+            <button type="button" onclick="signIn()">Buy now</button>
+        </div>
+
+
+
+        <!-- Add more products as needed -->
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
